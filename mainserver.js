@@ -7,6 +7,11 @@ var client = new Client();
 
 var app = express();
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+
+
 //globally allowing CORS
 app.all('/shivatejam/', function(req, res, next) {
   res.header('Access-Control-Allow-Origin','*');
@@ -44,5 +49,7 @@ app.get('/shivatejam/home/Description', function(req,res){
 
 
 
-app.listen(8235);
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
 console.log('Server Started on 8235');
