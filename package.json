@@ -1,0 +1,17 @@
+{
+  "name": "shivawebsiteserver",
+  "version": "1.0.0",
+  "description": "Backend server for shivatejam.com  ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivateja Madipalli",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.6",
+    "node-rest-client": "^1.8.0"
+  }
+}
