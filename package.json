@@ -13,5 +13,14 @@
     "mongodb": "^2.1.7",
     "mongoose": "^4.4.6",
     "node-rest-client": "^1.8.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivateja-madipalli/ShivatejaM-node-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shivateja-madipalli/ShivatejaM-node-server/issues"
+  },
+  "homepage": "https://github.com/shivateja-madipalli/ShivatejaM-node-server#readme"
 }
