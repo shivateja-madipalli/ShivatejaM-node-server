@@ -67,7 +67,7 @@ app.get('/shivatejam/githubrepos', function(req,res){
     client.get(githubUrl,headerForRequest,function(Data,Response){
             console.log("github data: " + Data);
             var finalResult = editGitJson(Data);
-            console.log("final result: " + finalResult);
+            console.log("final result: " + JSON.stringify(finalResult));
             res.json(finalResult);
     });
 });
@@ -80,19 +80,24 @@ console.log('Server Started on 8235');
 
 
 function editGitJson(Data){
-    var requiredjsondata = [];
-    // requiredjsondata = "{";
+    // var requiredjsondata = [];
+    // requiredjsondata = "[";
+    var returnJson = {
+        data : []
+    };
     for(var i=0;i<Data.length;i++)
     {
-        var gitProj = "{";
-            gitProj += "name : " + Data[i].name + ",";
-            gitProj += "html_url : " + Data[i].html_url + ",";
-            gitProj += "description : " + Data[i].description + ",";
-            gitProj += "created_at : " + Data[i].created_at + ",";
-            gitProj += "language : " + Data[i].language;
-        gitProj += "}";
-        requiredjsondata.push(gitProj);
+        var gitProj = {
+            "name" : JSON.stringify(Data[i].name),
+             "html_url" : JSON.stringify(Data[i].html_url),
+            "description" : JSON.stringify(Data[i].description),
+             "created_at" : JSON.stringify(Data[i].created_at),
+             "language" : JSON.stringify(Data[i].language)
+        }
+        
+        returnJson.data.push(gitProj);
     }
-    // requiredjsondata = "}";
-    return JSON.stringify(requiredjsondata);
+        
+    return returnJson;
+    
 }
